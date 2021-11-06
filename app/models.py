@@ -1,6 +1,6 @@
 from . import db
 
-class Pitch:
+class Pitch(db.Model):
   __tablename__ = 'pitches'
   
   pitch_id = db.Column(db.Integer, primary_key=True)
@@ -13,7 +13,7 @@ class Pitch:
   def __repr__(self):
     return f'Pitch {self.pitch_message}'
   
-class User:
+class User(db.Model):
   __tablename__ = 'users'
   
   user_id = db.Column(db.Integer, primary_key=True)
@@ -24,7 +24,7 @@ class User:
   def __repr__(self):
     return f'User {self.username}'
   
-class Comment:
+class Comment(db.Model):
   __tablename__ = 'comments'
   
   comment_id = db.Column(db.Integer, primary_key=True)
