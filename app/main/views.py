@@ -13,10 +13,10 @@ def index():
   Root page function that returns the index page and its content
   '''
   title = "Phoenix Pitches"
-  pickup_lines = Pitch.query.filter_by(category = "pickup-lines").all()
-  interview_pitch = Pitch.query.filter_by(category = "interview-pitch").all()
-  product_pitch = Pitch.query.filter_by(category = "product-pitch").all()
-  promotion_pitch = Pitch.query.filter_by(category = "promotion-pitch").all()
+  pickup_lines = Pitch.query.filter_by(pitch_category = "pickup-lines").all()
+  interview_pitch = Pitch.query.filter_by(pitch_category = "interview-pitch").all()
+  product_pitch = Pitch.query.filter_by(pitch_category = "product-pitch").all()
+  promotion_pitch = Pitch.query.filter_by(pitch_category = "promotion-pitch").all()
   
   return render_template('index.html', title = title, pickup_lines=pickup_lines, interview_pitch = interview_pitch, product_pitch=product_pitch, promotion_pitch=promotion_pitch)
 

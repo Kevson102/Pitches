@@ -1,13 +1,41 @@
-{% extends 'base.html' %}
-{% import 'macros.html' as macro %}
+<h1>Pickup Lines</h1>
 
-{% block content%}
-<div style="margin-top: 1em;" class="tab-pane" id="Products" role="tabpanel">
-  <div class="container-fluid" style="margin: 0% 2%">
-    <div class="row">
-      {{macro.displayPitchList(product_pitch)}}
-    </div>
-  </div>
-</div>
 
-{%endblock%}
+{% if true %}
+{%for pitch in pickup_lines %}
+{{pitch.pitch_message}}
+{%endfor%}
+{% else %}
+  <p>There is no pitch for this section</p>
+{% endif %}
+
+<h1>Interview pitches</h1>
+{% if pitch %}
+  {%for pitch in interview_pitch%}
+    {{pitch.pitch_message}}
+  {%endfor%}
+{% else %}
+  <p>There is no pitch for this section</p>
+{% endif %}
+
+<h1>Product pitches</h1>
+{% if pitch %}
+  {%for pitch in product_pitch%}
+    {{pitch.pitch_message}}
+  {%endfor%}
+{% else %}
+  <p>There is no pitch for this section</p>
+{% endif %}
+
+<h1>Promotion pitches</h1>
+{% if pitch %}
+  {%for pitch in promotion_pitch%}
+    {{pitch.pitch_message}}
+  {%endfor%}
+{% else %}
+  <p>There is no pitch for this section</p>
+{% endif %}
+
+<a href="">post a pitch</a>
+
+<a href="{{url_for('main.new_pitch')}}">Post a Pitch</a>

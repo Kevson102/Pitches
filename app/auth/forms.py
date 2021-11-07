@@ -17,7 +17,7 @@ class RegistrationForm(FlaskForm):
     
   # Custom Validation for registration username
   def validate_username(self, data_field):
-    if User.query.filter_by(username=data_field).first():
+    if User.query.filter_by(username=data_field.data).first():
       raise ValidationError('That username is already taken. Please pick a different username')
     
 class LoginForm(FlaskForm):

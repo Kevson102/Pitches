@@ -13,6 +13,12 @@
         <p><small>No Profile Picture</small></p>
       {% endif %}
       <h2> {{user.username | capitalize}} </h2>
+      {% if user == current_user %}
+        <form action="{{url_for('main.update_userprofile_pic', uname = user.username)}}" method="post" enctype='multipart/form-data'>
+        <input type="file" name = "photo" class="form-control" required>
+        <input type="submit" value="upload">
+        </form>
+      {% endif %}
     </div>
 
     <!-- Displaying the user's bio -->
@@ -21,8 +27,12 @@
         <p><small> {{user.user_bio}} </small></p>
       {% else %}
         <p><small>No bio for {{user.username}} has been added</small></p>
+      {% endif %}
     </div>
 
+    {% if user == current_user %}
+      <a href="{{url_for('main.update_user_profile', uname = user.username)}}">Edit Profile</a>
+    {% endif %}
     <!-- Displaying the user's pitches -->
     <div>
 
@@ -30,4 +40,4 @@
   </div>
 </div>
 
-{% endblock%}
+{% endblock %}
