@@ -1,1 +1,15 @@
-<h1>Login page works!</h1>
+<!-- <h1>Login page works!</h1> -->
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.thml' as wtf %}
+
+{% block content %}
+
+<!-- Login form -->
+<div class="container">
+  <div class="row">
+    {{wtf.quick_form(login_form)}}
+    <p><small><strong>Don't have and account? <a href="{{url_for('auth.register')}}">Sign up</a></strong></small></p>
+  </div>
+</div>
+
+{% endblock %}
