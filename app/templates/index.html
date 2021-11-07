@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+
+{% block content%}
+<div style="margin-top: 1em;" class="tab-pane" id="Products" role="tabpanel">
+  <div class="container-fluid" style="margin: 0% 2%">
+    <div class="row">
+      {{macro.displayPitchList(product_pitch)}}
+    </div>
+  </div>
+</div>
+
+{%endblock%}

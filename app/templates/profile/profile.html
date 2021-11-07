@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+
+    <!-- Displaying the username -->
+    <div class="col-xs-4 col-sm-4 col-md-4">
+      {% if user.user_profile_pic_path %}
+        <img src="{{url_for('static', filename = user.user_profile_pic_path)}}" alt="Profile picture" class="img-responsive">
+      {% else %}
+        <p><small>No Profile Picture</small></p>
+      {% endif %}
+      <h2> {{user.username | capitalize}} </h2>
+    </div>
+
+    <!-- Displaying the user's bio -->
+    <div class="col-xs-3 col-sm-3 col-md-3">
+      {% if user.user_bio %}
+        <p><small> {{user.user_bio}} </small></p>
+      {% else %}
+        <p><small>No bio for {{user.username}} has been added</small></p>
+    </div>
+
+    <!-- Displaying the user's pitches -->
+    <div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock%}

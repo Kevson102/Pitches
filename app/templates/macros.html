@@ -1,0 +1,50 @@
+<!-- Macro for displaying the comment list -->
+{% macro displayCommentList(comments) %}
+  {% for comment in comments%}
+    <div class="container">
+      {{comment.comment_message}}
+    </div>
+  {% endfor %}
+{% endmacro %}
+
+<!-- Macro for displaying the pitch list -->
+{% macro displayPitchList(pitches) %}
+  {% for pitch in pitches %}
+    <div class="card">
+      <div class="card-header">
+        {{pitch.pitch_category}}
+      </div>
+
+      <div class="card-body">
+
+        <div class="card-title">
+          <h4> {{pitch.pitch_title}} </h4>
+        </div>
+        
+        <div>
+          <p> {{pitch.pitch_message}} </p>
+        </div>
+
+
+        <!-- UpVote and Downvote section -->
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <a href="">
+              <span class="fas fa-thumbs-up"></span>
+            </a>&ensp;
+            <a href="">
+              <span class="fas fa-thumbs-down"></span>
+            </a>&ensp;
+            <a href="{{url_for('main.comments')}}">
+              <span class="fas fa-comments"></span>
+            </a>
+          </li>
+          <li> {{pitch.date_published}} </li>
+          <li>
+            <a href="url_for('main.new_pitch')"> Add a new pitch</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  {%endfor%}
+{%endmacro%}

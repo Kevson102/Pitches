@@ -5,7 +5,7 @@ from ..models import User
 from .forms import RegistrationForm, LoginForm
 from .. import db
 
-@auth.route('/login')
+@auth.route('/login', methods = ['GET', 'POST'])
 def login():
   login_form = LoginForm()
   if login_form.validate_on_submit():
@@ -30,7 +30,7 @@ def register():
     
     return redirect(url_for('auth.login'))
   
-    title = "New User"
+    # title = "New User"
   return render_template('auth/register.html', registration_form = form)
 
 @auth.route('logout')
