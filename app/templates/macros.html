@@ -1,9 +1,14 @@
 <!-- Macro for displaying the comment list -->
 {% macro displayCommentList(comments) %}
   {% for comment in comments%}
-    <div class="container">
+
+  <div class="container">
       {{comment.comment_message}}
+      <br>
+      <small><i><b>Published: </b>{{comment.date_posted}} </i></small>
+      <hr>
     </div>
+
   {% endfor %}
 {% endmacro %}
 

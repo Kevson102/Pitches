@@ -1,0 +1,20 @@
+.card{
+  border: 1px;
+  max-width: 250px;
+  height: auto;
+}
+.pitch{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+.card{
+  background-color:rgb(218, 210, 210);
+  margin-top: 10px;
+  border-radius: 10px;
+}
+.card-header{
+  margin-top: 0%;
+  background-color:aqua
+}

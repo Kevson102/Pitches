@@ -7,7 +7,7 @@ from .. import db, photos
 
 # Views
 @main.route('/')
-@login_required
+
 def index():
   '''
   Root page function that returns the index page and its content
@@ -83,7 +83,7 @@ def comments():
   
   if comment_form.validate_on_submit():
     
-    new_comment = Comment(comment = comment_form.comment.data)
+    new_comment = Comment(comment_message = comment_form.comment.data)
     new_comment.save_comment()
     
     return redirect(url_for('main.comments'))
