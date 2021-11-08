@@ -1,13 +1,28 @@
-<h1>Pickup Lines</h1>
+{% extends 'bootstrap/base.html'%}
 
+{% block content%}
+<div class="container">
+  <h1>Pickup Lines</h1>
 
-{% if true %}
-{%for pitch in pickup_lines %}
-{{pitch.pitch_message}}
-{%endfor%}
-{% else %}
-  <p>There is no pitch for this section</p>
-{% endif %}
+  {% if true %}
+    {%for pitch in pickup_lines %}
+      <div>
+        <div class="card-header text-center">
+          <h4>{{pitch.pitch_title}}</h4>
+        </div>
+        <div class="card-body">
+          {{pitch.pitch_message}}
+        </div>
+        <p><small><b>Author: </b><i> {{pitch.pitch_author}} </i></small></p>
+        <p><small><b>Date Published: </b><i> {{pitch.date_published}} </i></small></p>
+      </div>
+    {%endfor%}
+  {% else %}
+    <p>There is no pitch for this section</p>
+  {% endif %}
+</div>
+
+{% endblock %}
 
 <h1>Interview pitches</h1>
 {% if pitch %}
