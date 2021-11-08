@@ -26,7 +26,13 @@
             <p><small><b>Author: </b><i> {{pitch.pitch_author}} </i></small></p>
             <p><small><b>Date Published: </b><i> {{pitch.date_published}} </i></small></p>
           </div>
-          <div>
+          <div class="text-center">
+            <a href="">
+              <span class="fas fa-thumbs-up">Upvote</span>
+            </a>&ensp;
+            <a href="">
+              <span class="fas fa-thumbs-down">Downvote</span>
+            </a>&ensp; <br>
             <a href="{{url_for('main.comments')}}">Comment</a>
           </div>
         </div>
