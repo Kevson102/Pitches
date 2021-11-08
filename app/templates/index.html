@@ -41,6 +41,11 @@
       <p>There is no pitch for this section</p>
     {% endif %}
     </div>
+    <div class="text-center">
+      <div class="btn btn-primary btn-success text-center">
+        <a href="{{url_for('main.new_pitch')}}">Post a Pitch</a>
+      </div>
+    </div>
   </div>
 
   <div>
@@ -68,6 +73,11 @@
     {% else %}
       <p>There is no pitch for this section</p>
     {% endif %}
+    </div>
+    <div class="text-center">
+      <div class="btn btn-primary btn-success text-center">
+        <a href="{{url_for('main.new_pitch')}}">Post a Pitch</a>
+      </div>
     </div>
   </div>
 
@@ -97,7 +107,13 @@
       <p>There is no pitch for this section</p>
     {% endif %}
     </div>
+    <div class="text-center">
+      <div class="btn btn-primary btn-success text-center">
+        <a href="{{url_for('main.new_pitch')}}">Post a Pitch</a>
+      </div>
+    </div>
   </div>
+
 
   <div>
     <h1 class="text-center">Promotion Pitches</h1>
@@ -127,8 +143,10 @@
     </div>
   </div>
 
-  <div class="btn btn-primary btn-success text-center">
-    <a href="{{url_for('main.new_pitch')}}">Post a Pitch</a>
+  <div class="text-center">
+    <div class="btn btn-primary btn-success text-center">
+      <a href="{{url_for('main.new_pitch')}}">Post a Pitch</a>
+    </div>
   </div>
 </div>
 
