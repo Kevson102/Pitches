@@ -47,5 +47,5 @@ Heroku - online deployment
 Support and contact details
 Incase of any issues at hand, please email me at kevson3941@gmail.com
 
-License
+# License
 MIT License.
